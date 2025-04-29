@@ -1,4 +1,6 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 const title = 'Astro';
 const title2 = 'Turbo';
@@ -14,10 +16,7 @@ const pageTitle = 'Главная';
     <title>{pageTitle}</title>
   </head>
   <body>
-    <a href="/">Главная</a>
-    <a href="/about/">О сайте</a>
-    <a href="/blog/">Блог</a>
-
+    <Navigation />
     <h1>Мой сайт на Astro</h1>
 
     <p>
@@ -39,5 +38,6 @@ const pageTitle = 'Главная';
       omnis officiis molestiae, quasi dolore natus adipisci saepe qui possimus optio eius?
       Commodi accusamus rerum quia tenetur possimus.
     </div>
+    <Footer />
   </body>
 </html>

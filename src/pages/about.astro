@@ -1,4 +1,6 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 const pageTitle = 'Обо мне';
 
@@ -40,47 +42,44 @@ const textCase = 'uppercase';
     </style>
   </head>
   <body>
-    <body>
-      <a href="/">Главная</a>
-      <a href="/about/">О сайте</a>
-      <a href="/blog">Блог</a>
+    <Navigation />
 
-      <h1>Мой сайт на Astro</h1>
-      <h1>{pageTitle}</h1>
-      <h2>... и моем новом сайте на Astro!</h2>
+    <h1>Мой сайт на Astro</h1>
+    <h1>{pageTitle}</h1>
+    <h2>... и моем новом сайте на Astro!</h2>
 
-      <p>
-        Я прохожу вводный учебник по Astro. Это вторая страница моего сайта, и это первая
-        страница, которую я создал самостоятельно!
-      </p>
+    <p>
+      Я прохожу вводный учебник по Astro. Это вторая страница моего сайта, и это первая
+      страница, которую я создал самостоятельно!
+    </p>
 
-      <p>
-        Сайт будет обновляться по мере прохождения учебника, так что заходите сюда снова и
-        следите за моим прогрессом!
-      </p>
+    <p>
+      Сайт будет обновляться по мере прохождения учебника, так что заходите сюда снова и
+      следите за моим прогрессом!
+    </p>
 
-      <p>Несколько фактов обо мне:</p>
-      <ul>
-        <li>Меня зовут {identity.firstName}.</li>
-        <li>Моя страна — {identity.country}, а род занятий — {identity.occupation}.</li>
-        {
-          identity.hobbies.length >= 2 && (
-            <li>
-              Два моих увлечения: {identity.hobbies[0]} и {identity.hobbies[1]}
-            </li>
-          )
-        }
-      </ul>
-      <p>Мои навыки:</p>
-      <ul>
-        {skills.map((skill) => <li class="skill">{skill}</li>)}
-      </ul>
+    <p>Несколько фактов обо мне:</p>
+    <ul>
+      <li>Меня зовут {identity.firstName}.</li>
+      <li>Моя страна — {identity.country}, а род занятий — {identity.occupation}.</li>
+      {
+        identity.hobbies.length >= 2 && (
+          <li>
+            Два моих увлечения: {identity.hobbies[0]} и {identity.hobbies[1]}
+          </li>
+        )
+      }
+    </ul>
+    <p>Мои навыки:</p>
+    <ul>
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
 
-      {happy && <p>Я рад(а) изучать Astro!</p>}
+    {happy && <p>Я рад(а) изучать Astro!</p>}
 
-      {finished && <p>Я завершил(а) это руководство!</p>}
+    {finished && <p>Я завершил(а) это руководство!</p>}
 
-      {goal === 3 ? <p>Моя цель — завершить за 3 дня.</p> : <p>Моя цель — не 3 дня.</p>}
-    </body>
+    {goal === 3 ? <p>Моя цель — завершить за 3 дня.</p> : <p>Моя цель — не 3 дня.</p>}
+    <Footer />
   </body>
 </html>
