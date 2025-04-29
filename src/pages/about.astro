@@ -1,5 +1,18 @@
 ---
+const pageTitle = "Обо мне";
 
+const identity = {
+  firstName: "Сара",
+  country: "Канада",
+  occupation: "Технический писатель",
+  hobbies: ["фотография", "наблюдение за птицами", "бейсбол"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Написание документации"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="ru">
@@ -8,7 +21,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} >
-    <title>Astro</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <body>
@@ -17,12 +30,31 @@
         <a href="/blog">Блог</a>
 
         <h1>Мой сайт на Astro</h1>
-        <h1>Обо мне</h1>
+        <h1>{pageTitle}</h1>
         <h2>... и моем новом сайте на Astro!</h2>
       
         <p>Я прохожу вводный учебник по Astro. Это вторая страница моего сайта, и это первая страница, которую я создал самостоятельно!</p>
       
         <p>Сайт будет обновляться по мере прохождения учебника, так что заходите сюда снова и следите за моим прогрессом!</p>
+
+        <p>Несколько фактов обо мне:</p>
+        <ul>
+            <li>Меня зовут {identity.firstName}.</li>
+            <li>Моя страна — {identity.country}, а род занятий — {identity.occupation}.</li>
+            {identity.hobbies.length >= 2 &&
+            <li>Два моих увлечения: {identity.hobbies[0]} и {identity.hobbies[1]}</li>
+            }
+        </ul>
+        <p>Мои навыки:</p>
+        <ul>
+            {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
+
+        {happy && <p>Я рад(а) изучать Astro!</p>}
+
+        {finished && <p>Я завершил(а) это руководство!</p>}
+
+        {goal === 3 ? <p>Моя цель — завершить за 3 дня.</p> : <p>Моя цель — не 3 дня.</p>}
       </body>
   </body>
 </html>
