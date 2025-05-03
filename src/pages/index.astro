@@ -1,43 +1,30 @@
 ---
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
-import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = 'Главная';
 const title = 'Astro';
 const title2 = 'Turbo';
-const pageTitle = 'Главная';
 ---
 
-<html lang="ru">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <Header />
-    <h1>Мой сайт на Astro</h1>
+<BaseLayout pageTitle={pageTitle}>
+  <h1>Мой сайт на Astro</h1>
 
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eum, impedit sit
-      corporis, sed quidem mollitia deleniti tempore eos incidunt repellat nihil. Ipsa,
-      nostrum inventore blanditiis ex aspernatur quibusdam aperiam!
-    </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eum, impedit sit
+    corporis, sed quidem mollitia deleniti tempore eos incidunt repellat nihil. Ipsa,
+    nostrum inventore blanditiis ex aspernatur quibusdam aperiam!
+  </p>
 
-    <h2>{title}</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eum, impedit sit
-      corporis, sed quidem mollitia deleniti tempore eos incidunt repellat nihil. Ipsa,
-      nostrum inventore blanditiis ex aspernatur quibusdam aperiam!
-    </p>
+  <h2>{title}</h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eum, impedit sit
+    corporis, sed quidem mollitia deleniti tempore eos incidunt repellat nihil. Ipsa,
+    nostrum inventore blanditiis ex aspernatur quibusdam aperiam!
+  </p>
 
-    <h3>{title2}</h3>
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos minus, iusto illo,
-      omnis officiis molestiae, quasi dolore natus adipisci saepe qui possimus optio eius?
-      Commodi accusamus rerum quia tenetur possimus.
-    </div>
-    <Footer />
-  </body>
-</html>
+  <h3>{title2}</h3>
+  <div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos minus, iusto illo, omnis
+    officiis molestiae, quasi dolore natus adipisci saepe qui possimus optio eius? Commodi
+    accusamus rerum quia tenetur possimus.
+  </div>
+</BaseLayout>
