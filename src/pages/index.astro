@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Greeting from '../components/Greeting.jsx';
 const pageTitle = 'Главная';
 const title = 'Astro';
 const title2 = 'Turbo';
@@ -7,6 +8,7 @@ const title2 = 'Turbo';
 
 <BaseLayout pageTitle={pageTitle}>
   <h1>Мой сайт на Astro</h1>
+  <Greeting client:load messages={['Hej', 'Hallo', 'Hola', 'Habari']} />
 
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eum, impedit sit
