@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: Моя четвёртая запись в блоге
 author: Ученик Astro
 description: 'Этот пост появится сам по себе!'
